@@ -23,6 +23,17 @@ def create_product(request):
         )
         return redirect("product_view", pk=product.pk)
 
+def category_view(request):
+    if request.method == 'GET':
+        categories = Category.objects.all()
+        return render(request, 'category_view.html', context={"categories": categories})
+    else:
+        category = Category.objects.create(
+            title=request.POST.get("title"),
+            description=request.POST.get("description"),
+        )
+        return redirect("category_view")
+
 def product_view(request, *args, pk, **kwargs):
     product = get_object_or_404(Product, pk=pk)
     return render(request, 'product_view.html', context={"product": product})

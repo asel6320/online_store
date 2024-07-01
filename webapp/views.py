@@ -16,12 +16,12 @@ def create_product(request):
     else:
         product = Product.objects.create(
             title=request.POST.get("title"),
+            price=request.POST.get("price"),
+            image_url=request.POST.get("image_url"),
             description = request.POST.get("description"),
             category_id = request.POST.get("category_id"),
-            price = request.POST.get("price"),
-            image_url = request.POST.get("image_url"),
         )
-        return redirect("product_detail", pk=product.pk)
+        return redirect("product_view", pk=product.pk)
 
 def product_view(request, *args, pk, **kwargs):
     product = get_object_or_404(Product, pk=pk)

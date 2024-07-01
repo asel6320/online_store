@@ -6,27 +6,23 @@ from webapp.models import Product, Category
 
 # Create your views here.
 def index(request):
-    articles = Article.objects.order_by('-created_at')
-    return render(request, 'index.html', context={"articles": articles})
+    products = Product.objects.order_by('-created_at')
+    return render(request, 'index.html', context={"products": products})
 
-def create_article(request):
+def create_product(request):
     if request.method == 'GET':
-        sections = Section.objects.all()
-        return render(request, 'create_article.html', context={"sections": sections})
+        categories = Category.objects.all()
+        return render(request, 'create_product.html', context={"categories": categories})
     else:
-        article = Article.objects.create(
+        product = Product.objects.create(
             title=request.POST.get("title"),
-            content = request.POST.get("content"),
-            author = request.POST.get("author"),
-            section_id = request.POST.get("section_id")
-        ) # v ideale vot zdes' doljna iiti proverka, chto priwli nujnye dannye i potom peredavat'
-        #return HttpResponseRedirect(reverse("article_detail", kwargs={"pk": article.pk}))
-        return redirect("article_detail", pk=article.pk)
+            description = request.POST.get("description"),
+            category_id = request.POST.get("category_id"),
+            price = request.POST.get("price"),
+            image_url = request.POST.get("image_url"),
+        )
+        return redirect("product_detail", pk=product.pk)
 
-def article_detail(request, *args, pk, **kwargs):
-    article = get_object_or_404(Article, pk=pk)
-    #try:
-    #    article = Article.objects.get(id=pk)
-    #except Article.DoesNotExist:
-    #    raise Http404
-    return render(request, 'article_detail.html', context={"article": article})
+def product_view(request, *args, pk, **kwargs):
+    product = get_object_or_404(Product, pk=pk)
+    return render(request, 'product_view.html', context={"product": product})

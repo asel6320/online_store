@@ -10,6 +10,6 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ['title', 'category']
     search_fields = ['title', 'price', 'category']
     fields = ['title', 'description', 'category', 'created_at', 'price', 'image_url']
-    readonly_fields = ['created_at', 'updated_at']
+    readonly_fields = ['created_at']
 # Register your models here.
 admin.site.register(Product, ProductAdmin)

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="col mb-2">
+       <div class="card h-100 d-flex flex-row">
+           <div class="img-wrapper">
+               <img src="{{ product.image_url }}" alt="Image 1" class="card-img-top img-fluid">
+           </div>
+           <div class="p-2 h-100 d-flex flex-column py-3 px-4">
+               <h4 class="mb-4">{{ product.title }}</h4>
+               <p>{{ product.category.title }}</p>
+               <p class="card-price mt-2">Price: {{ product.price }} $</p>
+               <p class="card-description">{{ product.description }}</p>
+               <p class="card-date">{{ product.created_at }}</p>
+           </div>
+       </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,102 @@
+[
+{
+  "model": "webapp.category",
+  "pk": 1,
+  "fields": {
+    "title": "Books",
+    "description": null
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 2,
+  "fields": {
+    "title": "Electronics",
+    "description": null
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 3,
+  "fields": {
+    "title": "Home Appliances",
+    "description": "It is only for home appliances"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 6,
+  "fields": {
+    "title": "Other",
+    "description": "This is the other"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 7,
+  "fields": {
+    "title": "Other-2",
+    "description": ""
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "title": "Django for Beginners",
+    "description": "An introductory book on Django framework for web development.",
+    "category": 1,
+    "created_at": "2024-07-01T10:52:11.052Z",
+    "price": "300.00",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZazjbgTiZXn7YYiH3q59DLQ-gu7FkC0r5lA&s"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 2,
+  "fields": {
+    "title": "Smartphone Apple",
+    "description": "A high-end smartphone with excellent features and a sleek design.",
+    "category": 2,
+    "created_at": "2024-07-01T10:53:30.877Z",
+    "price": "1000.00",
+    "image_url": "https://www.apple.com/kr/iphone/home/bu/images/overview/consider_modals/environment/dd_environment_trade_in__ffgz1k6741e2_large.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "title": "Vacuum Cleaner ABC",
+    "description": "A powerful vacuum cleaner with advanced suction technology.",
+    "category": 3,
+    "created_at": "2024-07-01T10:54:31.794Z",
+    "price": "199.99",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoYsj1Uqrat0ZWU0fGwNQwLqm7C2E77XXsbQ&s"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 4,
+  "fields": {
+    "title": "Hair Dryer",
+    "description": "This is my hair dryer",
+    "category": 2,
+    "created_at": "2024-07-01T12:12:45.052Z",
+    "price": "200.00",
+    "image_url": "https://static.thcdn.com/images/large/original//productimg/1600/1600/11855349-2024739312435667.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 5,
+  "fields": {
+    "title": "Memoirs of a Geisha",
+    "description": "The most emphasizing book I have ever read",
+    "category": 1,
+    "created_at": "2024-07-01T12:17:24.093Z",
+    "price": "100.00",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSerZLHLPVfUjOsp3bYdfoPNmA6-fDM69sofw&s"
+  }
+}
+]

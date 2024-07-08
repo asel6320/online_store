@@ -4,24 +4,19 @@ from django.urls import reverse
 from django.views import View
 
 from webapp.models import Product, Category
-from webapp.forms import ProductForm, SearchForm
+from webapp.forms import ProductForm, ProductSearchForm
 
 
 # Create your views here.
 def index(request):
-    form = SearchForm(request.GET)
+    form = ProductSearchForm(request.GET)
     products = Product.objects.all().order_by('-created_at')
 
     if form.is_valid():
-        title = form.cleaned_data['title']
-        products = products.filter(name__icontains=title)
+        title_query = form.cleaned_data['title']
+        products = products.filter(title__icontains=title_query)
 
-    context = {
-        'form': form,
-        'products': products,
-    }
-
-    return render(request, 'index.html', context)
+    return render(request, 'index.html', {'products': products, 'form': form})
 
 def create_product(request):
     if request.method == "POST":

@@ -5,6 +5,11 @@
 {% endblock %}
 
 {% block content %}
+    <form method="get" action="{% url 'products' %}">
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+    </br>
 
     <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
         {% for product in products %}

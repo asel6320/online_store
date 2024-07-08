@@ -46,5 +46,5 @@ class ProductForm(forms.ModelForm):
         }
 
 
-class SearchForm(forms.Form):
-    title = forms.CharField(label='Title', max_length=100)
+class ProductSearchForm(forms.Form):
+    search = forms.CharField(label='Product Title', max_length=100)

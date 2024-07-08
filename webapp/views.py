@@ -5,7 +5,7 @@ from django.views import View
 
 from webapp.models import Product, Category
 from webapp.forms import ProductForm, SearchForm
-from webapp.validate import product_validate
+
 
 # Create your views here.
 def index(request):
@@ -14,7 +14,7 @@ def index(request):
 
     if form.is_valid():
         title = form.cleaned_data['title']
-        products = products.filter(name__icontains=title, status='active')
+        products = products.filter(name__icontains=title)
 
     context = {
         'form': form,

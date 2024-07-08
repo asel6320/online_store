@@ -6,6 +6,18 @@ from django.core.exceptions import ValidationError
 from webapp.models import Product
 
 class ProductForm(forms.ModelForm):
+    def clean_price(self):
+        price = self.cleaned_data.get('price')
+        if price <= Decimal('0') or price > Decimal('100000'):
+            raise ValidationError("The price should be between 0 and 100000, inclusive")
+        return price
+
+    def clean_remainder(self):
+        remainder = self.cleaned_data.get('remainder')
+        if remainder <= 0:
+            raise ValidationError("The remainder should be greater than 0, inclusive")
+        return remainder
+
     def clean(self):
         cleaned_data = super().clean()
         title = cleaned_data.get("title")

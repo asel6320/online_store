@@ -7,9 +7,9 @@
            </div>
            <div class="p-2 h-100 d-flex flex-column py-3 px-4">
                <h4 class="mb-4">{{ product.title }}</h4>
-               <p>{{ product.category.title }}</p>
+               <a href="{% url 'category_products' product.category.title_slug %}">{{ product.category.title }}</a>
                <p class="card-price mt-2">Price: {{ product.price }} $</p>
-               <p class="card-remainder mt-2">Remainder: {{ product.remainder }} $</p>
+               <p class="card-remainder mt-2">Remainder: {{ product.remainder }}</p>
                <p class="card-description">{{ product.description }}</p>
                <p class="card-date">{{ product.created_at }}</p>
            </div>

@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 
 {% block title %}
-    <title>Products</title>
+    <title>Products by Categories</title>
 {% endblock %}
 
 {% block content %}
     <br>
+    <h1>Category Title: {{ category_title }}</h1>
     <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
         {% for product in products %}
             {% if product.remainder > 0 %}
@@ -16,7 +17,7 @@
                   </div>
                   <div class="p-2 h-100 d-flex flex-column py-3 px-4">
                     <h4 class="mb-4">{{ product.title }}</h4>
-                    <a href="{% url 'category_products' product.category.title_slug %}">{{ product.category.title }}</a>
+                    <p>{{ product.category.title }}</p>
                     <p class="card-price mt-2">Price: {{ product.price }}</p>
                       <p class="card-remainder mt-2">Remainder: {{ product.remainder }}</p>
                     <div class="mt-auto d-flex justify-content-end pt-2">

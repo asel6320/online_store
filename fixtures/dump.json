@@ -4,7 +4,8 @@
   "pk": 1,
   "fields": {
     "title": "Books",
-    "description": null
+    "description": null,
+    "title_slug": "books"
   }
 },
 {
@@ -12,7 +13,8 @@
   "pk": 2,
   "fields": {
     "title": "Electronics",
-    "description": null
+    "description": null,
+    "title_slug": "electronics"
   }
 },
 {
@@ -20,7 +22,8 @@
   "pk": 3,
   "fields": {
     "title": "Home Appliances",
-    "description": "It is only for home appliances"
+    "description": "It is only for home appliances",
+    "title_slug": "home-appliances"
   }
 },
 {
@@ -28,7 +31,8 @@
   "pk": 6,
   "fields": {
     "title": "Other",
-    "description": "This is the other"
+    "description": "This is the other",
+    "title_slug": "other"
   }
 },
 {
@@ -36,7 +40,8 @@
   "pk": 7,
   "fields": {
     "title": "Other-2",
-    "description": ""
+    "description": "",
+    "title_slug": "other-2"
   }
 },
 {
@@ -48,6 +53,7 @@
     "category": 1,
     "created_at": "2024-07-01T10:52:11.052Z",
     "price": "300.00",
+    "remainder": 6,
     "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZazjbgTiZXn7YYiH3q59DLQ-gu7FkC0r5lA&s"
   }
 },
@@ -60,6 +66,7 @@
     "category": 2,
     "created_at": "2024-07-01T10:53:30.877Z",
     "price": "1000.00",
+    "remainder": 2,
     "image_url": "https://www.apple.com/kr/iphone/home/bu/images/overview/consider_modals/environment/dd_environment_trade_in__ffgz1k6741e2_large.jpg"
   }
 },
@@ -72,6 +79,7 @@
     "category": 3,
     "created_at": "2024-07-01T10:54:31.794Z",
     "price": "199.99",
+    "remainder": 2,
     "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoYsj1Uqrat0ZWU0fGwNQwLqm7C2E77XXsbQ&s"
   }
 },
@@ -84,6 +92,7 @@
     "category": 2,
     "created_at": "2024-07-01T12:12:45.052Z",
     "price": "200.00",
+    "remainder": 3,
     "image_url": "https://static.thcdn.com/images/large/original//productimg/1600/1600/11855349-2024739312435667.jpg"
   }
 },
@@ -96,7 +105,60 @@
     "category": 1,
     "created_at": "2024-07-01T12:17:24.093Z",
     "price": "100.00",
+    "remainder": 0,
     "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSerZLHLPVfUjOsp3bYdfoPNmA6-fDM69sofw&s"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 6,
+  "fields": {
+    "title": "Force2",
+    "description": "ejtnbjrnlkbmrlknydbklrnkhjb",
+    "category": 2,
+    "created_at": "2024-07-08T10:51:47.160Z",
+    "price": "200.00",
+    "remainder": 0,
+    "image_url": "https://static.thcdn.com/images/large/original//productimg/1600/1600/11855349-2024739312435667.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 7,
+  "fields": {
+    "title": "wkrmgkmerg",
+    "description": "f3nr gkj3nk5jnghjknt4gj",
+    "category": 2,
+    "created_at": "2024-07-08T10:53:03.953Z",
+    "price": "0.00",
+    "remainder": 0,
+    "image_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4302-1937-8"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 8,
+  "fields": {
+    "title": "Memoirs of a Geisha",
+    "description": "vmnlkenmlktbnmlerkbd",
+    "category": 1,
+    "created_at": "2024-07-08T12:09:08.730Z",
+    "price": "200.00",
+    "remainder": 2,
+    "image_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4302-1937-8"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 9,
+  "fields": {
+    "title": "wkemf",
+    "description": "elrsmfg;kmerlk",
+    "category": 1,
+    "created_at": "2024-07-08T12:21:35.966Z",
+    "price": "2.00",
+    "remainder": 1,
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZazjbgTiZXn7YYiH3q59DLQ-gu7FkC0r5lA&s"
   }
 }
 ]

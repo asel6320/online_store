@@ -37,3 +37,4 @@ def category_view(request):
 def product_view(request, *args, pk, **kwargs):
     product = get_object_or_404(Product, pk=pk)
     return render(request, 'product_view.html', context={"product": product})
+

@@ -17,10 +17,11 @@ class Product(models.Model):
     category = models.ForeignKey("webapp.Category", on_delete=models.RESTRICT, verbose_name='Category', related_name='products', null=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created at')
     price = models.DecimalField(max_digits=10, decimal_places=2, null=False, blank=False, verbose_name="Price")
+    remainder = models.PositiveSmallIntegerField(null=True, blank=True, verbose_name='Remainder')
     image_url = models.URLField(max_length=200, null=False, blank=False, verbose_name="Image")
 
     def __str__(self):
-        return f"{self.pk}. {self.title}: {self.description} - {self.category} - {self.created_at} - {self.price} - {self.image_url}"
+        return f"{self.pk}. {self.title}: {self.description} - {self.category} - {self.created_at} - {self.price} - {self.image_url} -{self.remainder}"
 
     class Meta:
         db_table = 'products'

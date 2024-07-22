@@ -1,15 +1,16 @@
 from django.urls import path
+from django.views.generic import RedirectView
 
-from webapp.views import index, create_product, product_view, category_view, update_product, delete_product, \
-    CategoryProductsView
+from webapp.views import ProductListView, ProductDetailView, CreateProductView, UpdateProductView, DeleteProductView
+from webapp.views.products import category_view, CategoryProductsView
 
 urlpatterns = [
-    path('', index, name='products'),
-    path('products', index, name='products'),
-    path('products/add/', create_product, name='create_product'),
-    path('products/<int:pk>/', product_view, name='product_view'),
+    path('products/', ProductListView.as_view(), name='products'),
+    path('', RedirectView.as_view(pattern_name='products')),
+    path('create/', CreateProductView.as_view(), name='create_product'),
+    path('product/<int:pk>/', ProductDetailView.as_view(), name='product_view'),
+    path('product/<int:pk>/update/', UpdateProductView.as_view(), name='update_product'),
+    path('product/<int:pk>/delete/', DeleteProductView.as_view(), name='delete_product'),
     path('categories/add/', category_view, name='category_view'),
-    path('products/<int:pk>/update/', update_product, name='update_product'),
-    path('products/<int:pk>/delete/', delete_product, name='delete_product'),
     path('category/<slug:title_slug>/', CategoryProductsView.as_view(), name='category_products')
 ]

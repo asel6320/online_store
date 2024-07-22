@@ -44,7 +44,3 @@ class ProductForm(forms.ModelForm):
             'price': [MinValueValidator(Decimal('0.01'))],
             'remainder': [MinValueValidator(1)],
         }
-
-
-class ProductSearchForm(forms.Form):
-    search = forms.CharField(label='Product Title', max_length=100)
